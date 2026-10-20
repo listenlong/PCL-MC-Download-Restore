@@ -15,7 +15,9 @@ Friend Module ModSecret
 
 #Region "网络鉴权"
 
-    Public Const RestrictMcDownload As Boolean = True
+    ' 第三方修改：恢复 MC 下载、安装与整合包导入功能。
+    ' 如需重新启用官方 2.99 的合规限制，将此常量改为 True 即可。
+    Public Const RestrictMcDownload As Boolean = False
     Friend Function SecretCdnSign(UrlWithMark As String) As String
         If Not UrlWithMark.EndsWithF("{CDN}") Then Return UrlWithMark
         Return UrlWithMark.Replace("{CDN}", "").Replace(" ", "%20")
